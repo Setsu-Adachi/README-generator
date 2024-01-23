@@ -5,7 +5,53 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // array of questions for user
 const questions = [
+    {
+        type: "input",
+        name: "title",
+        message: "What is your project?",
+    },
+    {
+        type: "input",
+        name: "description",
+        message: "Discribe about the project?",
 
+    },
+    {
+        type: "input",
+        name: "installation",
+        message: "How to install?",
+
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "What is the usage?",
+
+    },
+    {
+        type: "input",
+        name: "license",
+        message: "What License do you use?",
+
+    },
+    {
+        type: "input",
+        name: "Contributing",
+        message: "Do you have any contributor?",
+
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "How to test?",
+
+    },
+    {
+        type: "input",
+        name: "github",
+        message: "What is your github user profile?",
+
+    },
 ];
 
 // function to write README file
@@ -14,7 +60,13 @@ function writeToFile(fileName, data) {
 
 // function to initialize program
 function init() {
+    inquirer.prompt(questions)
+        .then(function (answers) {
+            console.log(generateMarkdown(answers));
+            // run generate markdown and put it a variable
 
+            // run writeToFile function
+        })
 }
 
 // function call to initialize program
