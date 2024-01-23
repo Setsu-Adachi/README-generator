@@ -13,7 +13,7 @@ function generateMarkdown(data) {
   ${data.contributing}
   ## Tests
   ${data.tests}
-  ## Contact
+  ## Questions
   ${data.github}
 
 `;
