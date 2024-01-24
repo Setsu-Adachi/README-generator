@@ -19,6 +19,12 @@ const questions = [
     },
     {
         type: "input",
+        name: "tableofcontents",
+        message: "List up the table of contents",
+
+    },
+    {
+        type: "input",
         name: "installation",
         message: "How do you install?",
 
@@ -67,7 +73,7 @@ function init() {
             // run generate markdown and put it a variable
 const markdown = generateMarkdown(answers);
             // run writeToFile function
-  fs.writeFile("./output/readme.md", markdown, (error) => {console.log(error);});  
+  fs.writeFile("./readme.md", markdown, (error) => {console.log(error);});  
         })
 }
 
