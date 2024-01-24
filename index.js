@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
+const { error } = require("console");
 
 // array of questions for user
 const questions = [
@@ -64,8 +65,9 @@ function init() {
         .then(function (answers) {
             console.log(generateMarkdown(answers));
             // run generate markdown and put it a variable
-
+const markdown = generateMarkdown(answers);
             // run writeToFile function
+  fs.writeFile("./output/readme.md", markdown, (error) => {console.log(error);});  
         })
 }
 
